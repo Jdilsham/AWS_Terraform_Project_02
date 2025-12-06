@@ -47,7 +47,7 @@ data "aws_ami" "amazon_linux_2" {
 module "ec2_instance" {
   source = "terraform-aws-modules/ec2-instance/aws"
 
-  name                   = "var.${project_name}-ec2"
+  name                   = "${var.project_name}-ec2"
   instance_type          = var.instance_type
   ami                    = data.aws_ami.amazon_linux_2.id
   subnet_id              = data.aws_subnets.default.ids[0]
