@@ -86,7 +86,7 @@ module "s3_website" {
 
   #Allow public read access
   attach_policy = true
-  policy = jsondecode({
+  policy = jsonencode({
     version = "2012-10-17"
     statement = [
       {
